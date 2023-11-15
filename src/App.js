@@ -31,20 +31,19 @@ function Questions({data}) {
   return (
     <div className='questions'>
       {data.map((el, i) => (
-        <indivQuestion title={el.title} text={el.text} num={i} />
+        <IndivQuestion title={el.title} text={el.text} num={i} />
       ))}
-      TODO
     </div>
   );
 }
 
-function indivQuestion ({num, title, text}) {
+function IndivQuestion({num, title, text}) {
   return (
     <div className='item'>
-      <p className='number'>{num}</p>
+      <p className="number">{num}</p>
       <p className="text">{title}</p>
-      <p className='icon'>-</p>
-      <div className='content-box'>{text}</div>
+      <p className="icon">-</p>
+      <div className="content-box">{text}</div>
     </div>
   );
 }
