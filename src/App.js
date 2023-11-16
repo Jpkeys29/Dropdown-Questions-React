@@ -32,7 +32,7 @@ function Questions({data}) {
   return (
     <div className='questions'>
       {data.map((el, i) => (
-        <IndivQuestion title={el.title} text={el.text} num={i} />
+        <IndivQuestion title={el.title} text={el.text} num={i} key={el.title}/>
       ))}
     </div>
   );
@@ -41,8 +41,12 @@ function Questions({data}) {
 function IndivQuestion({num, title, text}) {
   const[isOpen, setIsOpen] = useState(false);
 
+function handleToggle () {
+  setIsOpen((isOpen) => ! isOpen);
+}
+
   return (
-    <div className='item'>
+    <div className='item' onClick={handleToggle}>
       <p className="number">{num < 9 ? `0${num + 1}` : num + 1}</p>
       <p className="text">{title}</p>
       <p className="icon" >{isOpen ? "-" : "+"}</p>
