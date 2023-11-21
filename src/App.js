@@ -53,7 +53,7 @@ function IndivQuestion({num, title, text, curreOpen, onOpen}) {
   // const[isOpen, setIsOpen] = useState(false);
 
 function handleToggle () {
-  onOpen(num);
+  onOpen(isOpen ? null : num);
   // setIsOpen((isOpen) => ! isOpen);
 }
 
