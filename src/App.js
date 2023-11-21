@@ -29,20 +29,31 @@ export default function App() {
 }
 
 function Questions({data}) {
+  const [curreOpen, setIsOpen] = useState(null);
+
   return (
     <div className='questions'>
       {data.map((el, i) => (
-        <IndivQuestion title={el.title} text={el.text} num={i} key={el.title}/>
+        <IndivQuestion 
+          curreOpen={curreOpen} 
+          onOpen={setIsOpen} 
+          title={el.title} 
+          text={el.text} 
+          num={i} 
+          key={el.title}
+        />
       ))}
     </div>
   );
 }
 
-function IndivQuestion({num, title, text}) {
-  const[isOpen, setIsOpen] = useState(false);
+function IndivQuestion({num, title, text, curreOpen, onOpen}) {
+  const isOpen = num == curreOpen;
+
+  // const[isOpen, setIsOpen] = useState(false);
 
 function handleToggle () {
-  setIsOpen((isOpen) => ! isOpen);
+  // setIsOpen((isOpen) => ! isOpen);
 }
 
   return (
