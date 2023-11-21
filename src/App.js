@@ -29,14 +29,14 @@ export default function App() {
 }
 
 function Questions({data}) {
-  const [curreOpen, setIsOpen] = useState(null);
+  const [curreOpen, setCurreOpen] = useState(null);
 
   return (
     <div className='questions'>
       {data.map((el, i) => (
         <IndivQuestion 
           curreOpen={curreOpen} 
-          onOpen={setIsOpen} 
+          onOpen={setCurreOpen} 
           title={el.title} 
           text={el.text} 
           num={i} 
@@ -53,6 +53,7 @@ function IndivQuestion({num, title, text, curreOpen, onOpen}) {
   // const[isOpen, setIsOpen] = useState(false);
 
 function handleToggle () {
+  onOpen(num);
   // setIsOpen((isOpen) => ! isOpen);
 }
 
