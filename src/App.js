@@ -42,8 +42,22 @@ function Questions({data}) {
           key={el.title}
         >{el.text}
         </IndivQuestion>
-
       ))}
+
+      <IndivQuestion 
+          curreOpen={curreOpen} 
+          onOpen={setCurreOpen} 
+          title='Test 1' 
+          num={22} 
+        >
+          <p> Allows React developers to:</p>
+            <ul>
+              <li>Break up UI into components</li>
+              <li>Make components reusable</li>
+              <li>Place state efficiently</li>
+            </ul>   
+      </IndivQuestion>  
+
     </div>
   );
 }
