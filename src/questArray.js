@@ -15,3 +15,5 @@ const faqs = [
         "Excepturi velit laborum, perspiciatis nemo perferendis reiciendis aliquam possimus dolor sed! Dolore laborum ducimus veritatis facere molestias!"
     }
   ];
+
+  export default faqs;
